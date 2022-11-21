@@ -11,8 +11,6 @@ program.parse();
 
 const options = program.opts();
 
-console.log(options.message);
-
 exec("git rev-parse --abbrev-ref HEAD", (err, stdout, stderr) => {
   //   console.log({ stdout }, { stderr }, { err });
   const commit_message = `[${stdout.trim()}] ${options.message}`;
